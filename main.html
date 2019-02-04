@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+   <link rel="stylesheet" href='../static/css/styles.css' />
+   <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:600" rel="stylesheet">
+   <title>Current Status</title>
+</head>
+
+<body>
+   <h1>ThermoPi</h1>
+
+   {% for pin in pins %}
+   <a href="/{{pin}}/set"> <span class="button"></span></a>
+   {% if pins[pin].state == false %}
+   <p>click the button to trigger the {{ pins[pin].name }} module</p>
+   {% else %}
+   <p>The  {{ pins[pin].name }} is currently unavailable for action.</p>
+   {% endif %}
+   </p>
+   {% endfor %}
+
+   {% if message %}
+   <h2>{{ message }}</h2>
+   {% endif %}
+
+   {% if currentTemp %}
+   <h2>{{ currentTemp }}</h2>
+   {% endif %}
+
+   {% if tempTemp %}
+   <h2>{{ newTemp }}</h2>
+   {% endif %}
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
